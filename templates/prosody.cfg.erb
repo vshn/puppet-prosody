@@ -160,6 +160,15 @@ pidfile = "<%= scope.lookupvar('prosody::pidfile') %>"
 -- for information about using the hashed backend.
 
 authentication = "<%= scope.lookupvar('prosody::authentication') %>"
+<%- ldap = scope.lookupvar('prosody::ldap')
+     if ldap != :undef -%>
+ldap = {
+  hostname = '<%= ldap['hostname'] %>'
+  bind_dn = '<%= ldap['bind_dn'] %>'
+  bind_password = '<%= ldap['bind_password'] %>'
+  use_tls = '<%= ldap['use_tls'] %>'
+}
+<%- end -%>
 
 -- Select the storage backend to use. By default Prosody uses flat files
 -- in its configured data directory, but it also supports more backends

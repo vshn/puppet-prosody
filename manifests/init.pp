@@ -27,6 +27,7 @@ class prosody (
   $authentication         = 'internal_plain',
   $storage                = 'internal',
   $sql                    = undef,
+  $ldap                   = undef,
   $modules_base           = [
     'roster', 'saslauth', 'tls', 'dialback', 'disco',
     'posix', 'private', 'vcard', 'version', 'uptime',
