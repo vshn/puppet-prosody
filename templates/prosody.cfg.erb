@@ -171,8 +171,6 @@ storage = {
       <%- end -%>
 <%- end -%>
 
-
-
 <%- sql = scope.lookupvar('prosody::sql')
     if sql != :undef -%>
 sql = { driver = "<%= sql['driver'] %>", database = "<%= sql ['database'] %>", username = "<%= sql['username'] %>", password = "<%= sql['password'] %>", host = "<%= sql['host'] %>" }
