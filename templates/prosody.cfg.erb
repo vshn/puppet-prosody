@@ -158,7 +158,20 @@ authentication = "<%= scope.lookupvar('prosody::authentication') %>"
 -- through modules. An "sql" backend is included by default, but requires
 -- additional dependencies. See http://prosody.im/doc/storage for more info.
 
-storage = "<%= scope.lookupvar('prosody::storage') %>"
+<%- storage = scope.lookupvar('prosody::storage')
+    if storage != :undef
+      if storage.is_a?(String) -%>
+storage = "<%= storage %>"
+  <%- elsif storage.is_a?(Hash) -%>
+storage = {
+        <%- storage.sort.each do |type,location| -%>
+   <%= type %> = "<%= location %>";
+        <%- end -%>
+}
+      <%- end -%>
+<%- end -%>
+
+
 
 <%- sql = scope.lookupvar('prosody::sql')
     if sql != :undef -%>
