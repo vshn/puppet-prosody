@@ -1,4 +1,6 @@
 class prosody (
+  $package_name           = 'prosody',
+  $package_ensure         = 'present',
   $admins                 = [],
   $pidfile                = '/var/run/prosody/prosody.pid',
   $user                   = 'prosody',
