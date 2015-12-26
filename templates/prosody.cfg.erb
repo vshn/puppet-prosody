@@ -96,6 +96,14 @@ ssl = {
       if dhparam != :undef -%>
   dhparam = "<%= dhparam %>";
   <% end -%>
+  <%- ssl_key = scope.lookupvar('prosody::ssl_key')
+      if ssl_key != :undef -%>
+  ssl_key = "<%= ssl_key %>";
+  <% end -%>
+  <%- ssl_cert = scope.lookupvar('prosody::ssl_cert')
+      if ssl_cert != :undef -%>
+  ssl_cert = "<%= ssl_cert %>";
+  <% end -%>
 }
 
 -- Force clients to use encrypted connections? This option will
