@@ -98,11 +98,11 @@ ssl = {
   <%- end -%>
   <%- ssl_key = scope.lookupvar('prosody::ssl_key')
       if ssl_key != :undef -%>
-  ssl_key = "<%= ssl_key %>";
+  key = "<%= ssl_key %>";
   <%- end -%>
   <%- ssl_cert = scope.lookupvar('prosody::ssl_cert')
       if ssl_cert != :undef -%>
-  ssl_cert = "<%= ssl_cert %>";
+  certificate = "<%= ssl_cert %>";
   <%- end -%>
 }
 
