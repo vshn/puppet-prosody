@@ -15,7 +15,7 @@ VirtualHost "<%= @name %>"
     certificate = "<%= @prosody_ssl_cert %>";
   }
 <% end -%>
-<%- if @custom_options != :undef -%>
+<%- if @custom_options != {} -%>
 ------ Custom config options ------
 <%- @custom_options.sort.each do |option, value| -%>
 <%= option %> = <%= value %>
