@@ -33,6 +33,7 @@ class prosody (
     'time', 'ping', 'pep', 'admin_adhoc'
   ],
   $modules                = [],
+  $modules_disabled       = [],
   $community_modules      = [],
   $components             = {},
   $virtualhosts           = {},
